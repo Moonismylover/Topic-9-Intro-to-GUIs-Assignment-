@@ -30,7 +30,7 @@
         {
             this.btnzero = new System.Windows.Forms.Button();
             this.btnplus = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbltext = new System.Windows.Forms.Label();
             this.btnclear = new System.Windows.Forms.Button();
             this.btnquit = new System.Windows.Forms.Button();
             this.btnone = new System.Windows.Forms.Button();
@@ -72,14 +72,14 @@
             this.btnplus.Text = "+";
             this.btnplus.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // lbltext
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(323, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "label1";
+            this.lbltext.AutoSize = true;
+            this.lbltext.Location = new System.Drawing.Point(323, 87);
+            this.lbltext.Name = "lbltext";
+            this.lbltext.Size = new System.Drawing.Size(35, 13);
+            this.lbltext.TabIndex = 29;
+            this.lbltext.Text = "label1";
             // 
             // btnclear
             // 
@@ -273,7 +273,7 @@
             this.Controls.Add(this.btnone);
             this.Controls.Add(this.btnquit);
             this.Controls.Add(this.btnclear);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbltext);
             this.Controls.Add(this.btnplus);
             this.Controls.Add(this.btnzero);
             this.Name = "Form1";
@@ -287,7 +287,7 @@
         #endregion
         private System.Windows.Forms.Button btnzero;
         private System.Windows.Forms.Button btnplus;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbltext;
         private System.Windows.Forms.Button btnclear;
         private System.Windows.Forms.Button btnquit;
         private System.Windows.Forms.Button btnone;
