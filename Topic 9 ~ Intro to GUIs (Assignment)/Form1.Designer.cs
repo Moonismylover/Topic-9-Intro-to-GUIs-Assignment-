@@ -58,7 +58,7 @@
             this.btnzero.TabIndex = 10;
             this.btnzero.Text = "0";
             this.btnzero.UseVisualStyleBackColor = false;
-            this.btnzero.Click += new System.EventHandler(this.button15_Click);
+            this.btnzero.Click += new System.EventHandler(this.btnzero_Click);
             // 
             // btnplus
             // 
@@ -78,9 +78,8 @@
             this.lbltext.AutoSize = true;
             this.lbltext.Location = new System.Drawing.Point(323, 87);
             this.lbltext.Name = "lbltext";
-            this.lbltext.Size = new System.Drawing.Size(35, 13);
+            this.lbltext.Size = new System.Drawing.Size(0, 13);
             this.lbltext.TabIndex = 29;
-            this.lbltext.Text = "label1";
             this.lbltext.Click += new System.EventHandler(this.lbltext_Click);
             // 
             // btnclear
@@ -107,7 +106,7 @@
             this.btnquit.Text = "QUIT";
             this.btnquit.UseVisualStyleBackColor = false;
             this.btnquit.Visible = false;
-            this.btnquit.Click += new System.EventHandler(this.button15_Click_1);
+            this.btnquit.Click += new System.EventHandler(this.btnquit_Click);
             // 
             // btnone
             // 
@@ -203,7 +202,7 @@
             this.btn9.TabIndex = 41;
             this.btn9.Text = "9";
             this.btn9.UseVisualStyleBackColor = false;
-            this.btn9.Click += new System.EventHandler(this.btn9_Click);
+            this.btn9.Click += new System.EventHandler(this.btnnine_Click);
             // 
             // btneight
             // 
@@ -294,7 +293,8 @@
             this.Controls.Add(this.btnzero);
             this.Name = "MainForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainForm_Click);
+            this.Click += new System.EventHandler(this.MainForm_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
