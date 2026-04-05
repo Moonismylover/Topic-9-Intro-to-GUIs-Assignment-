@@ -105,7 +105,6 @@
             this.btnquit.Tag = "";
             this.btnquit.Text = "QUIT";
             this.btnquit.UseVisualStyleBackColor = false;
-            this.btnquit.Visible = false;
             this.btnquit.Click += new System.EventHandler(this.btnquit_Click);
             // 
             // btnone

@@ -12,9 +12,10 @@ namespace Topic_9___Intro_to_GUIs__Assignment_
 {
     public partial class MainForm : Form
     {
-        double firstNumber = 0;
-        double secondNumber = 0;
-        double result = 0;
+        double firstNumber = 0;       
+        double secondNumber = 0;     
+        string currentOperation = "";
+        bool enteringSecondNumber = false;
 
         public MainForm()
         {
@@ -27,7 +28,7 @@ namespace Topic_9___Intro_to_GUIs__Assignment_
         }
         private void btnquit_Click(object sender, EventArgs e)
         {
-            if (!btnplus.Enabled && btnminus.Enabled && btnmultiply.Enabled && btndivide.Enabled)
+            if (!btnplus.Enabled && !btnminus.Enabled && !btnmultiply.Enabled && !btndivide.Enabled)
             {
                 Application.Exit();
             }
@@ -39,7 +40,7 @@ namespace Topic_9___Intro_to_GUIs__Assignment_
 
         private void btnclear_Click(object sender, EventArgs e)
         {
-            lbltext.Text = " ";
+            lbltext.Text = "";
 
             btnplus.Enabled = true;
             btnminus.Enabled = true;
@@ -48,149 +49,176 @@ namespace Topic_9___Intro_to_GUIs__Assignment_
 
             firstNumber = 0;
             secondNumber = 0;
-            result = 0;
+            currentOperation = "";
+            enteringSecondNumber = false;
         }
 
         private void btnzero_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "0";
+            lbltext.Text += "0";
 
-            if (firstNumber == 0)
-            {
-                firstNumber = 0;
-            }
+            if (!enteringSecondNumber)
+                double.TryParse(lbltext.Text, out firstNumber);
             else
-            {
-                secondNumber = 0;
-            }
+                double.TryParse(lbltext.Text, out secondNumber);
         }
 
         private void btnone_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "1";
+            lbltext.Text += "1";
 
-            if (firstNumber == 0)
-            {
-                firstNumber = 1;
-            }
+            if (!enteringSecondNumber)
+                double.TryParse(lbltext.Text, out firstNumber);
             else
-            {
-                secondNumber = 1;
-            }
+                double.TryParse(lbltext.Text, out secondNumber);
         }
 
         private void btntwo_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "2";
+            lbltext.Text += "2";
 
-            if (firstNumber == 0)
-            {
-                firstNumber = 2;
-            }
+            if (!enteringSecondNumber)
+                double.TryParse(lbltext.Text, out firstNumber);
             else
-            {
-                secondNumber = 2;
-            }
+                double.TryParse(lbltext.Text, out secondNumber);
         }
 
         private void btnthree_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "3";
+            lbltext.Text += "3";
 
-            if (firstNumber == 0)
-            {
-                firstNumber = 3;
-            }
+            if (!enteringSecondNumber)
+                double.TryParse(lbltext.Text, out firstNumber);
             else
-            {
-                secondNumber = 3;
-            }
+                double.TryParse(lbltext.Text, out secondNumber);
         }
 
         private void btnfour_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "4";
+            lbltext.Text += "4";
 
-            
-
-
+            if (!enteringSecondNumber)
+                double.TryParse(lbltext.Text, out firstNumber);
+            else
+                double.TryParse(lbltext.Text, out secondNumber);
         }
 
         private void btnfive_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "5";
+            lbltext.Text += "5";
+
+            if (!enteringSecondNumber)
+                double.TryParse(lbltext.Text, out firstNumber);
+            else
+                double.TryParse(lbltext.Text, out secondNumber);
         }
 
         private void btnsix_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "6";
+            lbltext.Text += "6";
+
+            if (!enteringSecondNumber)
+                double.TryParse(lbltext.Text, out firstNumber);
+            else
+                double.TryParse(lbltext.Text, out secondNumber);
         }
 
         private void btnseven_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "7";
+            lbltext.Text += "7";
+            
+            if (!enteringSecondNumber)
+                double.TryParse(lbltext.Text, out firstNumber);
+            else
+                double.TryParse(lbltext.Text, out secondNumber);
         }
 
         private void btneight_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "8";
+            lbltext.Text += "8";
+
+            if (!enteringSecondNumber)
+                double.TryParse(lbltext.Text, out firstNumber);
+            else
+                double.TryParse(lbltext.Text, out secondNumber);
         }
         private void btnnine_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "9";
+            lbltext.Text += "9";
+
+            if (!enteringSecondNumber)
+                double.TryParse(lbltext.Text, out firstNumber);
+            else
+                double.TryParse(lbltext.Text, out secondNumber);
         }
 
         private void btnplus_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "+";
+            currentOperation = "+";
+            enteringSecondNumber = true; 
+            lbltext.Text = "";
             btnplus.Enabled = false;
         }
 
         private void btnminus_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "-";
+            currentOperation = "-";
+            enteringSecondNumber = true;
+            lbltext.Text = "";
             btnminus.Enabled = false;
         }
 
         private void btnmultiply_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "x";
+            currentOperation = "x";
+            enteringSecondNumber = true;
+            lbltext.Text = "";
             btnmultiply.Enabled = false;
         }
 
         private void btndivide_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "/";
+            currentOperation = "/";
+            enteringSecondNumber = true;
+            lbltext.Text = "";
             btndivide.Enabled = false;
         }
 
         private void btnequal_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "=";
+            double result = 0;
+            switch (currentOperation)
+            {
+                case "+":
+                    result = firstNumber + secondNumber;
+                    break;
+                case "-":
+                    result = firstNumber - secondNumber;
+                    break;
+                case "x":
+                    result = firstNumber * secondNumber;
+                    break;
+                case "/":
+                    if (secondNumber == 0)
+                    {
+                        MessageBox.Show("Cannot divide by zero!");
+                        return;
+                    }
+                    result = firstNumber / secondNumber;
+                    break;
+            }
+
+            lbltext.Text = $"{firstNumber} {currentOperation} {secondNumber} = {result}";
+
+            firstNumber = result;
+            secondNumber = 0;
+            enteringSecondNumber = false;
         }
 
         private void lbltext_Click(object sender, EventArgs e)
         {
-            lbltext.Text = "Please enter your expression!";
+
         }
-
-
-        /**
-Program 2 Calculations
-Create a calculation application that displays the result of a calculation after clicking
-a Button that displays a mathematical operation. You need to display both the expression AND the
-answer in a Label. The answer must be a result of a calculation, NOT a hard coded answer.
- Math in a Windows Forms application is the same as a Console application:
-e.g. lblAnswer1.Text = "8 * 8 = " + (8 * 8);
- When a Button is clicked, only the answer for that particular Button should be displayed next to
-it.
- Once a Button has been clicked, disable it.
- Challenges:
-o Instead of using the ‘Click’ event, try to use a different events for each
-Button/calculation.
-o Add a quit button. It should only work if the user has clicked every calculation.
-        **/
-
 
     }
 }
